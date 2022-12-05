@@ -13,22 +13,12 @@ function PokemonList({ pokemonList }: Props) {
   console.log(query);
   return (
     <main className="grid mx-auto">
-      <ul className="grid grid-cols-8 max-w-7xl mx-auto my-5">
-        <li>
-          <PokeCard />
-        </li>
-        <li>
-          <PokeCard />
-        </li>
-        <li>
-          <PokeCard />
-        </li>
-        <li>
-          <PokeCard />
-        </li>
-        <li>
-          <PokeCard />
-        </li>
+      <ul className="grid grid-cols-8 gap-4 max-w-7xl mx-auto my-5">
+        {pokemonList.results.map(pokemon => (
+          <li key={pokemon.name}>
+            <PokeCard pokemonInfo={pokemon} />
+          </li>
+        ))}
       </ul>
       <Pagination
         onPageChange={e => push(`/?page=${e.selected + 1}`)}
