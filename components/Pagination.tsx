@@ -1,4 +1,5 @@
 import ReactPaginate, { ReactPaginateProps } from 'react-paginate';
+
 function Pagination(props: ReactPaginateProps) {
   return (
     <ReactPaginate
@@ -7,6 +8,8 @@ function Pagination(props: ReactPaginateProps) {
       pageRangeDisplayed={5}
       previousLabel="< previous"
       renderOnZeroPageCount={() => null}
+      className="flex justify-center gap-4"
+      activeClassName="text-indigo-400"
       {...props}
     />
   );
