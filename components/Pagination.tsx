@@ -4,11 +4,11 @@ function Pagination(props: ReactPaginateProps) {
   return (
     <ReactPaginate
       breakLabel="..."
-      nextLabel="next >"
+      nextLabel="next"
       pageRangeDisplayed={5}
-      previousLabel="< previous"
+      previousLabel="previous"
       renderOnZeroPageCount={() => null}
-      className="flex justify-center gap-4"
+      className="flex justify-center gap-4 font-mono mt-6"
       activeClassName="text-indigo-400"
       {...props}
     />
