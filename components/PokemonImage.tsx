@@ -1,17 +1,21 @@
-interface ImageProps {
+import { HTMLAttributes } from 'react';
+
+interface ImageProps extends HTMLAttributes<HTMLPictureElement> {
   pokemonIndex: string | number;
+  customImage?: string;
 }
 
-function PokemonImage({ pokemonIndex }: ImageProps) {
+function PokemonImage({ pokemonIndex, customImage, ...props }: ImageProps) {
+  const defaultImageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
   return (
-    <picture>
+    <picture {...props}>
       <source
-        srcSet={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`}
+        srcSet={customImage || defaultImageUrl}
         type="image/webp"
         className="w-full max-w-md"
       />
       <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`}
+        srcSet={customImage || defaultImageUrl}
         alt="Landscape picture"
         className="w-full max-w-md"
       />
