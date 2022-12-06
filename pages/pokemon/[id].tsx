@@ -9,7 +9,7 @@ interface Props {
 
 function PokemonDetailPage({ pokemonDetail }: Props) {
   console.log(pokemonDetail);
-  return <PokemonDetail />;
+  return <PokemonDetail pokemonInfo={pokemonDetail} />;
 }
 export default PokemonDetailPage;
 
