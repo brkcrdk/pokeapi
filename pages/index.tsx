@@ -24,9 +24,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   }
 
   const request = await fetch(`${process.env.POKEMON_API}/pokemon?offset=${currentOffset}&limit=16`);
-  const response = await request.json();
-
-  console.log(response);
+  const response: Promise<PokemonListProps> = await request.json();
 
   return {
     props: {
