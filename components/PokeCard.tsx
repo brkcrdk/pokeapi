@@ -18,7 +18,7 @@ function PokeCard({ pokemonInfo }: Props) {
     >
       <div className="text-indigo-400 shadow-md rounded-md border-indigo-600 hover:shadow-indigo-600 p-5 w-full cursor-pointer flex items-center justify-center flex-col text-center">
         <PokemonImage pokemonIndex={pokemonIndex as string} />
-        <h1 className="">{pokemonInfo.name}</h1>
+        <h1 className="font-mono capitalize">{pokemonInfo.name}</h1>
       </div>
     </Link>
   );
