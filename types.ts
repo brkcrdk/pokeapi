@@ -4,3 +4,7 @@ export interface PokemonListProps {
   prev: string | null;
   results: { name: string; url: string }[];
 }
+
+export interface PokemonDetailProps {
+  name: string;
+}
